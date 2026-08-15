@@ -1,7 +1,7 @@
 export const APP_NAME = import.meta.env.VITE_APP_NAME ?? 'Document Processing System';
 
 export const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL ?? 'https://localhost:7275/api';
+  import.meta.env.VITE_API_BASE_URL ?? 'http://docmngsys.runasp.net/api';
 
 export const MAX_FILE_SIZE_MB = Number(import.meta.env.VITE_MAX_FILE_SIZE_MB ?? 25);
 export const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024;

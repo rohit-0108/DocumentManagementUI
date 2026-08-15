@@ -18,7 +18,7 @@ export default defineConfig(({ mode }) => {
       open: true,
       proxy: {
         '/api': {
-          target: env.VITE_API_PROXY_TARGET || 'https://localhost:7275',
+          target: env.VITE_API_PROXY_TARGET || 'http://docmngsys.runasp.net',
           changeOrigin: true,
           secure: false, // self-signed dev certificate
         },
