@@ -1,0 +1,17 @@
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
+import { PageSpinner } from '@/components/ui';
+import { useAuth } from '@/hooks';
+
+/** Blocks unauthenticated access and remembers the intended destination. */
+export function ProtectedRoute() {
+  const { isAuthenticated, initialised } = useAuth();
+  const location = useLocation();
+
+  if (!initialised) return <PageSpinner label="Checking your session…" />;
+
+  if (!isAuthenticated) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
+
+  return <Outlet />;
+}
