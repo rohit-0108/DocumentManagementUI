@@ -1,5 +1,16 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/api/:path*",
+      "destination": "http://docmngsys.runasp.net/api/:path*"
+    },
+    {
+      "source": "/health",
+      "destination": "http://docmngsys.runasp.net/health"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }
